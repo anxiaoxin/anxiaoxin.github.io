@@ -191,3 +191,33 @@ img#mainImg:hover{
 	top: 500px;
 	display: none;
 }
+
+
+
+#canvas_div{
+	position: absolute;
+	text-align:center;
+	top: -160px;
+	z-index: 200;
+}
+
+canvas{
+	border: 1px;
+	border-color: black;
+	border-style: solid;
+	box-shadow: 5px 5px 10px gray;		
+}
+
+#Eatset{
+	position: absolute;
+	top: 2px;
+}
+
+.eatset-item{
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.about{
+	text-indent: 2em;
+}
