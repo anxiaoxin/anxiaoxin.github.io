@@ -1,0 +1,193 @@
+@keyframes to-top{
+	0%{
+		opacity: 0;
+		top: 20px;
+	}
+
+	100%{
+		opacity: 1;
+		top: 0px;
+	}
+}
+
+.to-top{
+	position: relative;
+	animation-name: to-top;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+.project-container{
+	position: relative;
+	animation-name: to-top;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;	
+	margin-top: 10px;
+}
+/*project里的样式*/
+.project-content{
+	position: relative;
+	width: 1000px;
+	left: -220px;
+}
+.item-center{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/*自定义input样式的样式*/
+}
+input[type="radio"].baidu + label:before{
+	content:".";
+	display: inline-block;
+	border: 1px solid rgb(165,163,163);
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	color: white;
+}
+input[type="radio"].baidu:checked + label:before{
+	content:".";
+	display: inline-block;
+	border: 1px solid red;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	color: white;
+}
+input[type="radio"]:checked.baidu + label:after{
+	content:".";
+	display: inline-block;
+	box-sizing: border-box;
+	border: 3px solid red;
+	width: 3px;
+	height: 3px;
+	position: absolute;
+	left: 6px;
+	top: 6px;
+	border-radius: 50%;
+	color: white;
+}		
+input[type="checkbox"].baidu + label:before{
+	content:".";
+	display: inline-block;
+	border: 1px solid rgb(165,163,163);
+	width: 15px;
+	height: 15px;
+	color: white;
+}
+input[type="checkbox"].baidu:checked + label:before{
+	content:"\2714";
+	display: inline-block;
+	border: 1px solid red;
+	font-size: 13px;
+	color: red;
+}	
+input.baidu{
+	display: none;
+}		
+.child-radio{
+	display: flex;
+}		
+.child-radio > div{
+	position: relative;
+	margin: 5px;
+}
+.child-radio + div{
+	margin:5px;
+}
+
+/*背景虚化流光字体等样式*/
+.content{
+	display: flex;
+	justify-content: center;
+	position: relative;
+} 
+.imgContainer{
+	padding: 10px;
+}  
+img#mainImg{
+	width: 1000px;
+}
+
+ /*图片虚化*/
+.imgContainer:hover{
+	-webkit-filter:blur(7px);
+}
+img#mainImg:hover{
+	box-shadow: 0 0 10px;
+}
+
+/*设置小图片的布局*/
+.littleimgdiv{
+	width: 392px;
+	position: absolute;
+	top: 79px;
+} 
+/*利用伪元素达到边框从中间向两边扩散的效果：
+	分别利用before与after伪元素，被通过改变before元素的top与height属性改变after元素的left与width属性达到从中间向两边扩散的效果。
+*/
+.border::before,.border::after{
+	content: " ";
+	width: 0;
+	height: 0;
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	transition-property:width,height,left,top;
+	transition-duration: 2s;
+	transition-timing-function: ease-out;
+}
+.border::before{
+	width: 100%;
+	top: 50%;
+}
+.imgContainer:hover + .littleimgdiv > .border::before{
+	top: 0;
+	height: 100%;
+	border: 4px solid white;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.border::after{
+	top: 0;
+	height: 100%;
+	left: 50%;
+}
+.imgContainer:hover + .littleimgdiv > .border::after{
+	left: 0;
+	width: 100%;
+	border: 4px solid white;
+	border-left-color: transparent;
+	border-right-color: transparent;
+}		
+.imgContainer:hover + .littleimgdiv + .fontdiv{
+	display: block;
+}
+.imgContainer:hover + .littleimgdiv{
+	opacity: 0.7;
+}
+/*设置光影流动文字：
+	利用背景图像的渐变色属性，设置交替变换的颜色背景，然后利用-webkit-background-clop:text;属性设置背景图像在文字下显示，然后使用-webkit-text-fill-color:tranparent;
+	属性设置文字为透明色。接下来改变背景图像的尺寸，拉大其宽度，然后利用背景位置的改变来达到效果。
+	*/
+@keyframes streamer {
+    0%  {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}		
+.shining{
+	background-image: -webkit-linear-gradient(left,black,white 25%, black 50%,white 75%,black 100%);
+	font-weight: bolder;
+	font-size: 22px;
+	-webkit-background-clip:text;
+	background-size: 200% 100%;
+	animation:streamer 5s infinite linear;
+	-webkit-text-fill-color:transparent;
+}		
+.fontdiv{
+	position: absolute;
+	top: 500px;
+	display: none;
+}

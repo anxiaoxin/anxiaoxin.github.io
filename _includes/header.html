@@ -2,6 +2,7 @@
    or page.title == "Blog"
    or page.title == "Projects"
    or page.title == "Tags"
+   or page.title == "Project"
 %}{% assign showHeader = true %}{% endif %}
 
 {% if showHeader == true %}
@@ -16,7 +17,7 @@
             </span>
         {% endif %}
 
-        <h1 class="title">{{ site.name }}</h1>
+        <h1 class="title shining">{{ site.name }}</h1>
         <h2 class="description">{{ site.bio }}</h2>
 
         {% include social-links.html %}
