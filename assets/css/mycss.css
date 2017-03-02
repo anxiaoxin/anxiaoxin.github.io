@@ -98,7 +98,6 @@ input.baidu{
 /*背景虚化流光字体等样式*/
 .content{
 	display: flex;
-	justify-content: center;
 	position: relative;
 } 
 .imgContainer{
@@ -121,6 +120,7 @@ img#mainImg:hover{
 	width: 392px;
 	position: absolute;
 	top: 79px;
+	left: 300px
 } 
 /*利用伪元素达到边框从中间向两边扩散的效果：
 	分别利用before与after伪元素，被通过改变before元素的top与height属性改变after元素的left与width属性达到从中间向两边扩散的效果。
@@ -189,6 +189,7 @@ img#mainImg:hover{
 .fontdiv{
 	position: absolute;
 	top: 500px;
+	left: 150px;
 	display: none;
 }
 
