@@ -221,3 +221,9 @@ canvas{
 .about{
 	text-indent: 2em;
 }
+
+.postcontainer{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
