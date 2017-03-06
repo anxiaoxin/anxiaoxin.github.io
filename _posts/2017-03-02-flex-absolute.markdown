@@ -13,7 +13,7 @@ description:
 ---
 
 
-在使用Flex布局时遇到了一个问题，废话不多说，直接看下代码：
+在使用Flex布局时遇到了一个问题：将父元素display设为flex，position设为relative，并且子元素设为居中，当子元素position为absolute时，FF和Chrome表现不一致，代码如下：
 #### CSS:
 {% highlight css %}
 		.container{
