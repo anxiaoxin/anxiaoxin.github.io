@@ -1,0 +1,133 @@
+---
+title: "DOM操作总结"
+layout: post
+date: 2017-03-09 20:20
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- JavaScript
+star: true
+category: blog
+author: Listen
+description: 
+---
+
+DOM1级定义了一个Node接口，改接口在DOM中由所有的节点类型实现，在JS中作为Node类型实现。JS中的所有节点类型都继承自Node类型，
+，因此都共享着相同的基本属性与方法。每个节点都有一个nodeType属性，表明节点的类型，其属性值为1~12的正整数，所以共有12种节点类型。
+我们常用的节点类型有
+<code class="mycode">element</code>，<code class="mycode">text</code>，<code class="mycode">attribute</code>，<code class="mycode">document-fragment</code>。
+
+## Element类型
+ELement类型用于表现XML或HTML，提供对元素标签名，子节点及特性的访问（也就是通过该类型来访问标签元素的此三项），其特征有：
+1. nodeType值为1。
+2. nodeName的值为元素的标签名。（tagName属性也返回元素标签名，两者返回的标签名将全部是大写）
+3. nodeValue的值为null。
+4. parentNode可能是Document或Element。
+5. 子节点可能是Element，Text，Comment等。
+{% highlight javascript %}
+//创建Element节点，
+//参数为标签名，如果是未知参数则会创建一个自定义标签
+	var text = document.createElement(); 
+{% endhighlight %}
+
+## Text类型
+Text表示文本节点，包含的是可以照字面解释的纯文本内容。纯文本内容可以包含转移的HTML字符，但不能包含
+HTML代码。Text节点有以下属性：
+1. nodeType的值为3。
+2. nodeName的值为"#text"。
+3. nodeValue的值为节点所包含的文本（该节点同样有data属性，两者的返回的值相同）。
+4. parentNode是一个Element。
+5. 没有子节点。
+{% highlight javascript %}
+//创建文本节点
+//参数是文本
+	var text = document.createTextNode();
+{% endhighlight %}
+
+## Attr类型
+元素的特性在DOM中以Attr类型表示。从技术角度讲，特性就是存在于元素的attributes属性中的节点（通过元素的attributes属性获取已经设置的特性节点的列表）。
+特性节点具有下列特性：
+1. nodeType的值是2。
+2. nodeName的值是特性的名称。
+3. nodeValue的值是特性的值。
+4. parentNode为Null。
+5. HTML中没有子节点。
+Attr类型的节点还有三个属性，name（同nodeName相同），value（同nodeValue相同），specified（布尔值，区别特性是在代码中指定的还是默认的）。
+
+在操作元素的属性时一般很少使用该节点进行操作，一般是使用getAttribute（），setAttribute，removeAttribute（）方法。
+{% highlight javascript %}
+//创建Attr节点
+//参数为特性的名称
+	var attr = document.createAttribute();
+{% endhighlight %}
+
+## DocumentFragment类型
+在所有节点类型中，只有该类型在文档中没有对应的标记，是一种轻量级文档，可以包含和控制节点。但是不会占用额外的内存，有如下特征：
+1. nodeType的值是11。
+2. nodeName的值为"#document-fragment"。
+3. nodeValue的值为null。
+4. parentNode的值为null。
+5. 子节点可以是Element、Text等节点。
+
+DocumentFragment节点不属于文档树，但可以将其插入文档树中，此时插入的不是DocumentFragment自身，而是
+它的所有子孙节点，同样的它的这一特殊行为可以带来性能优化。
+{% highlight javascript %}
+//创建文档片段节点
+	var fragment = document.createDocumentFragment();
+{% endhighlight %}
+
+## 创建节点
+
+关于节点的创建上面已经提到，除了使用create方法创建节点外，还可以使用
+cloneNode方法。该方法返回调用该方法的节点的一个副本，接收一个bool参数，表示
+是否复制子元素（true为复制子元素，false为不复制子元素）。
+
+
+## 页面修改
+在实际开发中，我们经常会对页面的DOM结构进行修改，常用的方法有：
+<code class="mycode">appendChild，insertBefore，removeChild，replaceChild</code>。
+
+#### appendChild
+将指定的节点添加到调用该方法的节点的子元素的末尾。使用方法如下：
+{% highlight javascript %}
+//child是指定的节点
+	parent.appendChild(child);
+{% endhighlight %}
+<code class="mycode">append</code>方法需要注意的一点是，如果其参数是一个文档中已经存在的节点，则该节点会出现在指定的
+位置，并从原位置处消失。也就是说在文档中同一个节点只能在一个地方出现。<attention>另外</attention>，如果child绑定了事件，则移动后依然绑定事件。
+
+
+#### insertBefore
+用来添加一个节点到一个参照节点之前，用法如下：
+{% highlight javascript %}
+//parent为新节点要插入的父节点
+//newChild为要插入的节点
+//oldChild为参照节点，新节点要插入到此节点的前面
+	parent.insertBefore(newChild,oldChild);
+{% endhighlight %}
+
+对于第二个参数需要<attention>注意</attention>的地方是该参数是必传的，如果不传会报错。如果传入的是<code class="mycode">undefind或null</code>则会
+插入到元素末尾。
+
+#### removeChild
+删除指定的节点并返回该节点，使用方法如下：
+{% highlight javascript %}
+//parent为删除节点的父节点
+//child为要删除的节点
+//deleteNode指向删除的节点
+	var deleteNode = parent.removeChild(child);
+{% endhighlight %}
+<attention>注意</attention>：删除节点后，该节点并未在内存中删除，依然可以使用deleteNode对其进行操作。此外还有一种<code class="mycode">remove()</code>方法
+是删除节点自身。
+
+#### replaceChild
+用于将一个节点替换另外一个节点。
+{% highlight javascript %}
+//parent为替换节点的父节点
+//newChild为替换的节点，可以是新节点，也可以是页面上的节点
+//oldChild为要替换的节点
+	parent.replaceChild(newChild,oldeChild);
+{% endhighlight %}
+
+
+## 节点查询
