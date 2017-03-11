@@ -117,7 +117,8 @@ cloneNode方法。该方法返回调用该方法的节点的一个副本，接�
 //deleteNode指向删除的节点
 	var deleteNode = parent.removeChild(child);
 {% endhighlight %}
-<attention>注意</attention>：删除节点后，该节点并未在内存中删除，依然可以使用deleteNode对其进行操作。此外还有一种<code class="mycode">remove()</code>方法
+
+需要<attention>注意</attention>的是：删除节点后，该节点并未在内存中删除，依然可以使用deleteNode对其进行操作。此外还有一种<code class="mycode">remove()</code>方法
 是删除节点自身。
 
 #### replaceChild
@@ -131,3 +132,90 @@ cloneNode方法。该方法返回调用该方法的节点的一个副本，接�
 
 
 ## 节点查询
+节点查询的目的主要就是获取想要的得到的节点，然后进行下一步的操作。
+
+#### document.getElementById
+根据元素的id返回查找的元素，返回值是Element类型，如果元素不存在则返回null。需要<attention>注意</attention>的是：
+1. 对元素id的大小写敏感。
+2. 如果HTML文档中存在多个ID相同的元素，则返回第一个。
+
+#### document.getElementsByTagName
+
+接口根据标签返回一个<code class="mycode">HTMLCollection</code>类型，<code class="mycode">HTMLCollection</code>类型是一种类似于数组的类型，是根据元素名返回的<code class="mycode">Element</code>元素的集合，它的
+特点是每次从该类型中获取元素都会重新遍历DOM树，得到最新的结果。需要<attention>注意</attention>的是：
+1. 如果没有指定标签的元素则会返回一个空的HTMLCollection类型，而不是null。
+2. “*”表示查找所有的标签。
+
+#### document.getElementByName
+通过name属性来获取元素，它返回的是NodeList对象，同<code class="mycode">HTMLCollection</code>类似，是动态的。需要<attention>注意</attention>的是：
+1. 在HTML中并不是所有的元素都有name属性，比如Div。但是如果在div中设置了该属性，使用此方法依然可以找到。
+2. 在IE中如果某个元素的id名与所查找的name值相同，则同样会被该方法获取到。
+
+
+#### document.getElementsByClassName
+
+根据类名查找元素，返回的是<code class="mycode">HTMLCollection</code>类型的值，其参数可以是多个classname，中间用空格分开。
+
+#### document.querySelector
+通过css选择器查找元素，采用深度优先搜索的方式获取第一个匹配的元素，如果没有匹配的元素则返回null。
+
+#### document.querySelectorAll
+同<code class="mycode">document.querySelector</code>一样，通过css选择器采用深度优先的方法查找元素。不同的是其返回所有匹配的元素，并且可以匹配
+多个选择符。搜索的元素的顺序与选择符的顺序无关，并且返回的是一个非及时的NodeList。
+
+#### 查找父节点
+- <code class="mycode">parentNode</code>是每个节点都有的属性，它表示元素的父节点，父节点可以是Element，Document，DocumentFragment类型。
+- <code class="mycode">parentElement</code>同样表示的是父节点，只不过其只能是Element类型，如果没有则返回null。
+
+#### 查找兄弟节点
+- 通过<code class="mycode">previousSibling</code>属性获取节点的前一个节点，返回的可能是文本节点或注释节点。
+- <code class="mycode">previousElementSibling</code>返回的是前一个节点，但是必须是Element节点，没有测返回null。
+- <code class="mycode">nextSibling</code>返回节点的后一个节点，如果没有则返回null。返回的节点可能是文本节点或注释节点。
+- <code class="mycode">nextElementSibling</code>返回节点的后一个节点，必须是Element类型，如果没有则返回null。
+
+#### 查找子节点
+- <code class="mycode">childNodes</code>返回一个及时的NodeList集合，表示元素的子节点列表，子节点可能包含文本节点或注释节点。
+- <code class="mycode">children</code>返回一个HTMLCollection集合，表示元素的子节点列表，都是Element类型。
+- <code class="mycode">firstNode</code>返回第一个子节点，可能是文本节点或注释节点。
+- <code class="mycode">lastNode</code>返回最后一个子节点，可能是文本节点或注释节点。
+- <code class="mycode">hasChildNodes</code>判断是否包含子节点。
+
+## 操作元素属性
+#### setAttribute
+设置元素的属性，用法如下：
+{% highlight javascript %}
+//e为需要设置属性的元素
+//name为属性名，不区分大小写
+//value为属性值
+	e.setAttribute(name,value);
+{% endhighlight %}
+
+#### getAttribute
+返回指定的元素属性的值，用法如下：
+{% highlight javascript %}
+//e为需要设置属性的元素
+//name为属性名，不区分大小写
+	e.getAttribute(name);
+{% endhighlight %}
+
+#### removeAttribute
+移除指定的元素属性的值，用法如下：
+{% highlight javascript %}
+//e为元素
+//name为属性名，不区分大小写
+	e.removeAttribute(name);
+{% endhighlight %}
+
+
+#### 特性（Attribute）与属性（Property）
+Attribute是DOM元素本身具有的属性，如<code class="mycode">id，class，title</code>等。Property是DOM作为JS中的对象所附加的内容，包括<code class="mycode">childNodes，firstChild</code>等，<attention>但是</attention>常用的Attribute也附加到了Property中。操作Attribute时通常使用setAttribute和getAttribute方法，操作Property时使用点的方法，需要<attention>注意</attention>的是：
+1. 很多特性都有对用的属性名，但是也只有公认的（非自定义的）特性才以属性的形式添加到DOM对象中。
+2. class特性对应的属性名是<code class="mycode">className</code>，因为class在js中是保留字。
+3. 有两类特殊的特性，虽然也有对应的属性名，但是属性的值与通过getAttibute()返回的值并不相同，这两类是style特性与onclick特性。
+4. style的属性值返回的是一个<code class="mycode">CSSStyleDeclaration</code>对象，这个对象中包含着所有的样式信息。使用<code class="mycode">getAttribute("style")</code>返回的是已经设定了的样式，没有设定的样式将不会返回。
+5。 onclick属性值返回的是一个函数，<code class="mycode">getAttribute("onclick")</code>返回的是相应代码的字符串。
+
+## 参考资料
+1. [Javascript操作DOM常用API总结](http://www.imooc.com/article/2562)
+2. [DOM元素的特性（Attribute）和属性（Property）](http://www.cnblogs.com/wangfupeng1988/p/3631853.html)
+3. JavaScript高级程序设计
