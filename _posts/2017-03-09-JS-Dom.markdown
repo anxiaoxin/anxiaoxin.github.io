@@ -213,7 +213,7 @@ Attribute是DOM元素本身具有的属性，如<code class="mycode">id，class�
 2. class特性对应的属性名是<code class="mycode">className</code>，因为class在js中是保留字。
 3. 有两类特殊的特性，虽然也有对应的属性名，但是属性的值与通过getAttibute()返回的值并不相同，这两类是style特性与onclick特性。
 4. style的属性值返回的是一个<code class="mycode">CSSStyleDeclaration</code>对象，这个对象中包含着所有的样式信息。使用<code class="mycode">getAttribute("style")</code>返回的是已经设定了的样式，没有设定的样式将不会返回。
-5。 onclick属性值返回的是一个函数，<code class="mycode">getAttribute("onclick")</code>返回的是相应代码的字符串。
+5. onclick属性值返回的是一个函数，<code class="mycode">getAttribute("onclick")</code>返回的是相应代码的字符串。
 
 ## 参考资料
 1. [Javascript操作DOM常用API总结](http://www.imooc.com/article/2562)
