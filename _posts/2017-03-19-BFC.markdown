@@ -1,0 +1,33 @@
+---
+title: "BFC简介"
+layout: post
+date: 2017-03-19 17:20
+image: /assets/images/markdown.jpg
+headerImage: false
+tag:
+- CSS
+star: true
+category: blog
+author: Listen
+description: 
+---
+
+## BFC
+BFC(Block formatting context),译名“块级格式化上下文”，是一个独立的渲染区域。只有Block-level Box参与，规定了在其内部的Block-level Box
+如何布局并且不影响该区域外部布局。
+
+## BFC表现
+1. 内部的Box会在垂直方向，从顶部开始一个接一个的放置。
+2. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加。
+3. 每个元素的margin box的左边与包含块border box的左边想接触（对于从左往右的格式化。否则相反），即使存在浮动也是如此。
+4. BFC的区域不会与float box重叠。
+5. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+6. 计算BFC的高度时，浮动元素也参与计算，即盒子内的浮动元素不会脱离盒子。
+
+## 触发BFC的条件
+1. float除了none以外。
+2. overflow除了visible以外的值。
+3. display为table-cell,table-caption,inline-block,flex,inline-flex。
+4. position的值为absolute或fixed。
+5. 根元素。
+6. fieldset元素。
