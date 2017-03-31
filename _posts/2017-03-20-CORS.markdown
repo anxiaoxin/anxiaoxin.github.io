@@ -1,7 +1,7 @@
 ---
 title: "跨域问题"
 layout: post
-date: 2017-03-20 10:20
+date: 2017-03-20 18:37
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -162,6 +162,7 @@ getData({"name":Listen,"age":24});
 如此，返回后就会自动运行getData函数。需要<attention>注意</attention>的是该方法只能发送发送GET请求，也就是只能从服务器端获取资源。
 
 #### WebSocket
+详细请看参考资料《浏览器同源政策及其规避方法》。
 #### CORS
 跨源资源访问（Cross-Origin Resource Sharing）。对于这部分的知识还是看阮一峰老师的
 博客吧~ [地址](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
