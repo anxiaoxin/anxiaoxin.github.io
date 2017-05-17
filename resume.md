@@ -56,7 +56,7 @@ layout: page
 		<span style="font-size: 18px; float: right;" class="bdYun"><i class="fa fa-download"></i></span></li>
 	<li>美人鱼
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1o85BoLW">
+			<a target="blank" href="https://pan.baidu.com/s/1o85BoLW">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -64,7 +64,7 @@ layout: page
 	</li>
 	<li>西游降魔篇
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1hs4177I">
+			<a target="blank" href="https://pan.baidu.com/s/1hs4177I">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -72,7 +72,7 @@ layout: page
 	</li>
 	<li>长江七号
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1milw8DM">
+			<a target="blank" href="https://pan.baidu.com/s/1milw8DM">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -80,7 +80,7 @@ layout: page
 	</li>
 	<li>功夫
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1dFzNWPz">
+			<a target="blank" href="https://pan.baidu.com/s/1dFzNWPz">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -88,7 +88,7 @@ layout: page
 	</li>
 	<li>少林足球
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1o8K4v70">
+			<a target="blank" href="https://pan.baidu.com/s/1o8K4v70">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -96,56 +96,56 @@ layout: page
 	</li>
 	<li>喜剧之王
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>千王之王2000
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>行运一条龙
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>算死草
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>97家有喜事
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>大内密探零零发
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>食神
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>百变星君
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1cKSM0e">
+			<a target="blank" href="https://pan.baidu.com/s/1cKSM0e">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -153,7 +153,7 @@ layout: page
 	</li>
 	<li>回魂夜
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1miynLJ6">
+			<a target="blank" href="https://pan.baidu.com/s/1miynLJ6">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -161,7 +161,7 @@ layout: page
 	</li>
 	<li>大话西游之月光宝盒
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1kUXl3nx">
+			<a target="blank" href="https://pan.baidu.com/s/1kUXl3nx">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -169,7 +169,7 @@ layout: page
 	</li>
 	<li>大话西游之仙履奇缘
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1boMCyJH">
+			<a target="blank" href="https://pan.baidu.com/s/1boMCyJH">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -177,7 +177,7 @@ layout: page
 	</li>
 	<li>国产凌凌漆
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1jIbrpJK">
+			<a target="blank" href="https://pan.baidu.com/s/1jIbrpJK">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -185,28 +185,28 @@ layout: page
 	</li>
 	<li>九品芝麻官
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>破坏之王
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>济公
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>唐伯虎点秋香
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1kViGKKJ">
+			<a target="blank" href="https://pan.baidu.com/s/1kViGKKJ">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -214,7 +214,7 @@ layout: page
 	</li>
 	<li>逃学威龙3龙过鸡年
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1pLRnXKf">
+			<a target="blank" href="https://pan.baidu.com/s/1pLRnXKf">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -222,7 +222,7 @@ layout: page
 	</li>
 	<li>武状元苏乞儿
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1eSMM2UA">
+			<a target="blank" href="https://pan.baidu.com/s/1eSMM2UA">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -230,7 +230,7 @@ layout: page
 	</li>
 	<li>鹿鼎记
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1qYBCOXI">
+			<a target="blank" href="https://pan.baidu.com/s/1qYBCOXI">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -238,7 +238,7 @@ layout: page
 	</li>
 	<li>鹿鼎记2神龙教
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1bpGhbqB">
+			<a target="blank" href="https://pan.baidu.com/s/1bpGhbqB">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -246,7 +246,7 @@ layout: page
 	</li>
 	<li>审死官
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1hrZZz7Y">
+			<a target="blank" href="https://pan.baidu.com/s/1hrZZz7Y">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -254,7 +254,7 @@ layout: page
 	</li>
 	<li>家有喜事
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1hssWnB2">
+			<a target="blank" href="https://pan.baidu.com/s/1hssWnB2">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -262,21 +262,21 @@ layout: page
 	</li>
 	<li>漫画威龙
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>情圣
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>赌侠2上海滩赌圣
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1eSl8KQA">
+			<a target="blank" href="https://pan.baidu.com/s/1eSl8KQA">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -284,7 +284,7 @@ layout: page
 	</li>
 	<li>逃学威龙2
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1c2msK7m">
+			<a target="blank" href="https://pan.baidu.com/s/1c2msK7m">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -292,7 +292,7 @@ layout: page
 	</li>
 	<li>逃学威龙
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1nuKqkU9">
+			<a target="blank" href="https://pan.baidu.com/s/1nuKqkU9">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -300,14 +300,14 @@ layout: page
 	</li>
 	<li>新精武门
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>龙的传人
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1gfab1Xx">
+			<a target="blank" href="https://pan.baidu.com/s/1gfab1Xx">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -315,7 +315,7 @@ layout: page
 	</li>
 	<li>整蛊专家
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1b2vD4y">
+			<a target="blank" href="https://pan.baidu.com/s/1b2vD4y">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -323,7 +323,7 @@ layout: page
 	</li>
 	<li>赌侠
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1dFd3nw9">
+			<a target="blank" href="https://pan.baidu.com/s/1dFd3nw9">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -331,14 +331,14 @@ layout: page
 	</li>
 	<li>江湖最后一个大佬
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>无敌幸运星
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1slBAHU9">
+			<a target="blank" href="https://pan.baidu.com/s/1slBAHU9">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -346,14 +346,14 @@ layout: page
 	</li>
 	<li>赌圣
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>师兄撞鬼
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1mhTLAHy">
+			<a target="blank" href="https://pan.baidu.com/s/1mhTLAHy">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -361,42 +361,42 @@ layout: page
 	</li>
 	<li>小偷阿星
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>咖喱辣椒
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>风雨同路
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>龙凤茶楼
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>一本漫画闯天涯
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>望夫成龙
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1mi6vpzi">
+			<a target="blank" href="https://pan.baidu.com/s/1mi6vpzi">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
@@ -404,42 +404,42 @@ layout: page
 	</li>
 	<li>流氓差婆
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>义胆群英
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>龙在天涯
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>最佳女婿
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>捕风汉子
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="">
+			<a target="blank" href="">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
 	</li>
 	<li>霹雳先锋
 		<span style="font-size: 18px; float: right;" class="bdYun">
-			<a href="https://pan.baidu.com/s/1nuIUrgt">
+			<a target="blank" href="https://pan.baidu.com/s/1nuIUrgt">
 				<i class="fa fa-download"></i>
 			</a>
 		</span>
