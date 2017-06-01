@@ -228,3 +228,101 @@ canvas{
 	align-items: center;
 	flex-direction: column;
 }
+
+/*钟表*/
+		@keyframes haha{
+			0%{
+				border-radius: 0;
+				transform: rotate(180deg);
+				font-size: 100px;
+			}
+			24%{
+				border-radius: 16%;
+				transform: rotate(360deg);
+				font-size: 80px;
+			}
+			48%{
+				border-radius: 32%;
+				transform: rotate(540deg);
+				font-size: 60px;
+			}
+			72%{
+				border-radius: 50%;
+				transform: rotate(720deg);
+				font-size: 50px;
+			}			
+			100%{
+			}			
+		}
+		@keyframes lala{
+			0%{
+				font-size: 20px;
+			}		
+			100%{
+				font-size: 18px;
+			}			
+		}	
+		@keyframes yaya{
+			0%{
+				opacity: 0;
+				left: -200px;
+			}
+			100%{
+				opacity: 1;
+				left: 0px;
+			}
+		}
+		.showTimeanimat{
+			width: 80px;
+			height: 80px;
+			border: 1px solid gray;
+			border-radius: 50%;
+			background-color: gray;
+			position: relative;
+			left: -24px;
+			top: 35px;
+			transition: transform 1s linear;
+			animation-name: haha;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}		
+		.showTime{
+			position: absolute;
+			animation-name: yaya;
+			animation-duration: 1s;
+			animation-timing-function: linear;	
+			top: -20px;		
+			min-width: 220px;
+		}
+		.showTime > div{
+			display: inline-block;
+		}
+		.showTimehAndmAnds{
+			position: relative;
+			font-size: 18px;
+			font-weight: bolder;
+			color: white;
+			animation-name: lala;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			left: -106px;							
+		}
+		.showTimeyAndm{
+			padding: 5px;
+			width: 100px;
+			height: 20px;
+			background-color: gray;
+			position: relative;
+			color: white;
+			font-size: 20px;
+			font-weight: bolder;			
+		}
+		.san{
+			border:15px solid transparent;
+			border-left: 15px solid gray;
+			position: relative;	
+			left: -4px;
+			top: 7px;	
+		}

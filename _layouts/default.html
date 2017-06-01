@@ -28,7 +28,31 @@ layout: compress
 
 </head>
 <body>
-
+    <div class="showTime">
+        <div class="showTimeyAndm" id="yAndm"></div>
+        <div class="san"></div>
+        <div class="showTimeanimat">
+        </div>
+        <span id="hAndmAnds" class="showTimehAndmAnds"></span>
+        <script type="text/javascript">
+            let hAndmAnds = document.getElementById("hAndmAnds");
+            let yAndm = document.getElementById("yAndm");
+            function setTime(){
+                var time = new Date();
+                yAndm.innerHTML = time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate();
+                hAndmAnds.innerHTML = addZ(time.getHours())+":"+addZ(time.getMinutes())+":"+addZ(time.getSeconds());                
+            }
+            function addZ(n){
+                if(n<10){
+                    return "0" + n;
+                }else{
+                    return n;
+                }
+            }
+            setTime();
+            setInterval(setTime,1000);
+        </script>        
+    </div>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.tag %}
             <div class="post">
