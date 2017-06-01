@@ -81,7 +81,7 @@ Number会将其参数转换为数值类型，参数的不同转换的结果也�
 #### 算数运算符（-、*、/、%）
 这些运算符在运算之前将参与运算的双方转换成数字，即使用Number方法转换。
 #### + 运算
-它比较特殊，以为其既承担这数字相加，还肩负着字符串链接。加法运算符会触发三种类型转换：转换成原始值（undefined，null，number，booleans，string），转换为数字，转换为字符串。对应JS引擎内部的三种抽象操作：toPrimitive(),toNumber(),toString
+它比较特殊，因为其既承担这数字相加，还肩负着字符串链接。加法运算符会触发三种类型转换：转换成原始值（undefined，null，number，booleans，string），转换为数字，转换为字符串。对应JS引擎内部的三种抽象操作：toPrimitive(),toNumber(),toString
 
 ##### ToPrimitive(input PreferredType?):
 1. 如果参数是一个原始值，则直接返回。
@@ -217,3 +217,19 @@ console.log()对于方程有特殊的隐式转化。
 	console.log(zun)//#<Function>
 {% endhighlight %}	
 另外，直接写函数名的结果同console.log()结果一致。
+
+## ~~  (补)
+转换成整数类型，与Number转换机制相似，不同的是如果转换结果为NaN，则最终是0，并且如果本身是数字，如果大于零采用
+下舍入，小于零采用上舍入。
+{% highlight javascript %}
+	~~true		//1
+	~~false		//0
+	~~"1"		//1
+	~~"abc"		//0
+	~~"123abc"	//0
+	~~undefined	//0
+	~~null		//0
+	~~Infinity	//0
+	~~1.5 		//1
+	~~-1.5 		//-1
+{% endhighlight %}	
