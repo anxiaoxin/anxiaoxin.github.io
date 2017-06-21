@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>手势密码</title>
+	<style>
+		/*定义一个内容容器，flex布局，方向为纵向，元素居中显示*/
+		.container360{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.canvasContainer360{
+			margin-top: 2rem;
+			position: relative;
+		}
+		#canvas2{
+			position: absolute;
+			background-color: transparent;
+		    top: 0px;
+		    left: 0px;			
+		}
+		.infor{
+			font-size: 1.5rem;
+			text-align: center;
+			height: 4rem;
+		}
+		.setting{
+			font-size: 1.5rem;
+			width: 70%;
+			text-align: center;
+		}
+		.setting div{
+			height: 2rem;
+		}
+		input[type="radio"]{
+			width: 1rem;
+			height: 1rem;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container360">
+		<div class="canvasContainer360">
+			<canvas id="canvas1"></canvas>
+			<canvas id="canvas2"></canvas>
+		</div>
+		<div id="infor" class="infor">
+			请输入手势密码
+		</div>
+		<div class="setting">
+			<div onclick="draw.clear(1);">
+				<input id="setPass" type="radio" name="setting" checked>
+				<label for="setPass">设置密码</label>
+			</div>
+			<div onclick="draw.clear(1);">
+				<input id="testPass" type="radio" name="setting">
+				<label for="testPass">验证密码</label>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// //页面对手机尺寸进行的适配，动态设定字体大小，元素大小，圆圈大小等。
+		 var unit = 60;  //声明基本单位，当绘制画布内容时设定圆的尺寸。
+		
+		//定义两个画布，底层的用来绘制九个圆点，上层的用来绘制直线
+		var canvas1 = document.getElementById("canvas1");
+		var canvas2 = document.getElementById("canvas2");
+		var ctx1 = canvas1.getContext("2d");	
+		var ctx2 = canvas2.getContext("2d");	
+
+		//设定画布的尺寸
+		canvas1.setAttribute("width",unit * 6 + "px");
+		canvas1.setAttribute("height",unit * 6 + "px");
+		canvas2.setAttribute("width",unit * 6 + "px");
+		canvas2.setAttribute("height",unit * 6 + "px");		
+		var r = Math.floor(unit * 6 / 12); //指定圆的半径
+
+		//设定九个圆的圆点坐标
+		var flag1 = 2*r;
+		var flag2 = 6*r;
+		var flag3 = 10*r;
+		var circleLocation = [[flag1,flag1],[flag2,flag1],[flag3,flag1],[flag1,flag2],[flag2,flag2],[flag3,flag2],[flag1,flag3],[flag2,flag3],[flag3,flag3]];
+
+		ctx1.lineWidth=2;
+		ctx1.strokeStyle="gray";//圆的边的颜色
+		ctx1.fillStyle="white";//填充颜色
+		ctx2.lineWidth=r / 5;			
+		ctx2.strokeStyle="red";//直线的颜色
+
+		//定义一个绘制对象，所有的动作函数都在该对象中
+		var draw = {
+			canvas:"",//画板对象
+			beginer:[0,0],   //绘制线段的开始点
+			ender:[0,0],	//回执线段的结束点
+			selectedNode:[], //已选择的点
+			r: 0,
+			nodes:[], //用于接收传入的节点
+			setBeginBind:"",	//用于绑定事件的清除
+			setEndBind:"",
+			endDrawBind:"",
+			times:0,	//设置密码时的次数
+			myPassTmp:"", //设置密码时的密码缓存
+			init:function(canvas,circleLocation,r){
+				this.r = r;
+				this.canvas = canvas;
+				this.nodes = circleLocation;
+				this.drawCircle();
+				this.setBeginBind = this.setBegin.bind(this),
+				this.setEndBind = this.setEnd.bind(this),
+				this.endDrawBind = this.endDraw.bind(this),
+				this.addListener();
+			},
+			addListener:function(){
+				canvas2.addEventListener("mousedown",this.setBeginBind,false); // 使用bind绑定函数中的this为draw对象
+				canvas2.addEventListener("mouseup",this.endDrawBind,false);
+			},
+			//移除事件，动作操作成功后避免再次操作发生冲突
+			removeListener:function(){
+				canvas2.removeEventListener("mousedown",this.setBeginBind,false); // 使用bind绑定函数中的this为draw对象
+				canvas2.removeEventListener("mouseup",this.endDrawBind,false);	
+			},
+			//绘制线段
+			start:function(circleLocation){ 
+				ctx2.beginPath();				
+				ctx2.moveTo(this.beginer[0],this.beginer[1]);
+				if(this.selectedNode.length > 1){
+					ctx2.moveTo(this.nodes[this.selectedNode[0]][0],this.nodes[this.selectedNode[0]][1]);
+					for(var i of this.selectedNode){		
+						ctx2.lineTo(this.nodes[i][0],this.nodes[i][1]);	
+					}
+				}else{
+					ctx2.moveTo(this.beginer[0],this.beginer[1]);				
+				}
+				ctx2.lineTo(this.ender[0],this.ender[1]);
+				ctx2.stroke();					
+			},
+			//绘制圆
+			drawCircle: function(){
+				ctx1.clearRect(0,0,canvas1.width,canvas1.height);
+				ctx1.strokeStyle="gray";//圆的边的颜色
+				ctx1.fillStyle="white";//填充颜色					
+				for(var node of this.nodes){
+					ctx1.beginPath();	
+					ctx1.arc(node[0],node[1],this.r,0,360,false);
+					ctx1.closePath();	
+					ctx1.fill();//画实心圆	
+					ctx1.stroke();
+				}				
+				
+			},
+			//获取初始点，线段的开始点
+			setBegin:function(event){	
+				canvas2.addEventListener("mousemove",this.setEndBind,false);
+				let bbox = this.canvas.getBoundingClientRect();
+				this.beginer[0] = event.clientX - bbox.left * (this.canvas.width/bbox.width);
+				this.beginer[1] = event.clientY - bbox.top * (this.canvas.height/bbox.height);	
+				
+			},
+			//获取当前点,线段的结束点
+			setEnd:function(event){   
+				let bbox = canvas2.getBoundingClientRect();
+				this.ender[0] = event.clientX - bbox.left * (this.canvas.width/bbox.width);
+				this.ender[1] = event.clientY - bbox.top * (this.canvas.height/bbox.height);	
+				ctx2.clearRect(0,0,canvas2.width,canvas2.height);	
+				this.chooseNode();
+				this.start();
+			},
+			//手指抬起时的事件
+			endDraw:function(){
+				canvas2.removeEventListener("mousemove",this.setEndBind,false);
+				ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+				ctx2.beginPath();
+				if(this.selectedNode.length > 1){
+					ctx2.moveTo(this.nodes[this.selectedNode[0]][0],this.nodes[this.selectedNode[0]][1]);
+					for(var i of this.selectedNode){		
+						ctx2.lineTo(this.nodes[i][0],this.nodes[i][1]);	
+					}
+				}
+				ctx2.stroke();	
+				this.checkNodes();
+			},
+			//判断手指经过了哪个点，将其推入slectedNode中
+			chooseNode:function(){
+				var x,y,distance;
+				for(var i in this.nodes){
+					x = this.nodes[i][0] - this.ender[0];
+					y = this.nodes[i][1] - this.ender[1];
+					distance = Math.pow((x*x + y*y),0.5);
+					if(distance < this.r){
+						if(this.selectedNode.join("").indexOf(i) != -1){
+							return ;
+						}else{
+							this.selectedNode.push(parseInt(i));
+							ctx1.strokeStyle="gray";//圆的边的颜色
+							ctx1.fillStyle="rgb(255,167,38)";//填充颜色
+							ctx1.beginPath();	
+							ctx1.arc(this.nodes[i][0],this.nodes[i][1],r,0,360,false);
+							ctx1.closePath();	
+							ctx1.fill();//画实心圆	
+							ctx1.stroke();							
+							this.beginer = this.nodes[i];							
+						}
+					}
+				}
+			},
+			//检查绘制的图像密码是否符合要求
+			checkNodes:function(){
+				var state = document.querySelector("input:checked").id;
+				if(this.selectedNode.length < 5){
+					document.getElementById("infor").innerText = "密码太短，至少需要5个点";
+					this.clear();
+				}else if(state == "setPass"){
+					if(this.times == 0){
+						this.times += 1;
+						myPassTmp = this.selectedNode.join("");
+						console.log(myPassTmp);
+						document.getElementById("infor").innerText = "请再次输入手势密码";
+						this.clear();
+					}else{
+						if(myPassTmp == this.selectedNode.join("")){
+							document.getElementById("infor").innerText = "密码设置成功";
+							localStorage.myPass = myPassTmp;
+							this.removeListener();
+						}else{
+							myPassTmp = "";
+							this.times = 0;
+							this.clear();
+							document.getElementById("infor").innerText = "两次输入不一致";
+						}
+					}
+				}else{
+					if(localStorage.myPass){
+						if(localStorage.myPass == this.selectedNode.join("")){
+							document.getElementById("infor").innerText = "密码正确！";
+							this.removeListener();
+						}else{
+							this.clear();
+							document.getElementById("infor").innerText = "输入的密码不正确";
+						}
+					}else{
+						document.getElementById("infor").innerText = "还没有设置密码";
+					}
+				}
+			},
+			//清除图形密码
+			clear:function(n){
+				ctx2.clearRect(0,0,canvas2.width,canvas2.height);
+				this.selectedNode = [];
+				this.beginer = [0,0];
+				this.ender = [0,0];
+				this.drawCircle();
+				if(n){
+					document.getElementById("infor").innerText = "请输入手势密码";
+					this.addListener();
+					this.myPassTmp = "";
+					this.times = 0;
+				}
+			}
+		}
+
+		draw.init(canvas1,circleLocation,r);				
+	</script>
+</body>
+</html>

@@ -202,7 +202,7 @@ img#mainImg:hover{
 	z-index: 200;
 }
 
-canvas{
+.canvasPig{
 	border: 1px;
 	border-color: black;
 	border-style: solid;

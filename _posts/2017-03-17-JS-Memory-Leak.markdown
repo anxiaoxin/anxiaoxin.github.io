@@ -73,3 +73,10 @@ delete a.b;
 d;//{c:1}
 {% endhighlight %}
 对于这种情况需要的是循环遍历a对象删除其内部属性。
+
+#### ES6中的解构赋值
+在ES6中变量的赋值可以使用数组或者对象进行赋值，在使用对象赋值时，如果变量与对象的属性不一致，则可以使用一下方法进行赋值。
+{% highlight javascript %}
+let {foo:baz} = {foo:"aaa"};
+{% endhighlight %}
+赋值后baz为“aaa”，但是对于foo，在Chrome与FF中为"",在node中会报ReferenceError，未定义。所以在浏览器环境下，使用这种方法赋值虽然只是想声明一个变量，确有两个变量存在，造成内存泄漏。
